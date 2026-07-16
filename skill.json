@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-designer",
+  "description": "投资组合设计器：根据目标、期限、风险承受力、资金来源方式，自动匹配最优资产配置方案并推荐具体基金标的",
+  "display_name": "投资组合设计器",
+  "author": "user",
+  "version": "1.0.0",
+  "adapters": {
+    "claude-code": {
+      "type": "skill",
+      "command": "/portfolio-designer",
+      "invocation": "用户说出关键词如'帮我设计一个投资组合'或'投个资'时调用"
+    },
+    "codex-cli": {
+      "type": "agent-instruction",
+      "activation": "当用户请求投资组合设计时，按portfolio-designer.md的流程执行"
+    },
+    "windsurf": {
+      "type": "custom-agent",
+      "activation": "在Agent规则中引用portfolio-designer.md"
+    },
+    "tongyi-lingma": {
+      "type": "custom-instruction",
+      "activation": "引用portfolio-designer.md作为投资设计专用指令"
+    }
+  }
+}
